@@ -1,11 +1,13 @@
 import type { NextPage } from 'next';
-import { NextLink } from '@mantine/next';
-import { Button } from '@mantine/core';
+// import { NextLink } from '@mantine/next';
+// import { Button, Grid, Container } from '@mantine/core';
+import { GridPlayGround } from '../features/grid/components/GridPlayGround';
 
 const Home: NextPage = () => {
   return (
     <>
-      <Button component={NextLink} href="/page2">page2</Button>
+      <p>MantineのGrid機能を色々遊べる場所</p>
+      <GridPlayGround></GridPlayGround>
     </>
   );
 };
