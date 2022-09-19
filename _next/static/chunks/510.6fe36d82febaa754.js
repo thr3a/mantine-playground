@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[510],{510:function(e,n,i){i.r(n),i.d(n,{default:function(){return s}});var t=i(5893),o=i(1232),r=i(971);function s(){return(0,t.jsxs)(o.Z,{position:"center",children:[(0,t.jsx)(r.P,{"aria-label":"Close modal"}),(0,t.jsx)(r.P,{title:"Close popover",size:"xl",iconSize:20})]})}}}]);
