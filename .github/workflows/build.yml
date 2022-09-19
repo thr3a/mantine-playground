@@ -13,7 +13,7 @@ jobs:
       - name: Checkout official repository
         uses: actions/checkout@v3
         with:
-          repository: https://github.com/mantinedev/mantine.git
+          repository: mantinedev/mantine
           path: /tmp
 
       - name: Setup Node.js
