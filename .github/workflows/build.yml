@@ -11,10 +11,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Checkout official repository
-        uses: actions/checkout@v3
-        with:
-          repository: mantinedev/mantine
-          path: /tmp
+        run: git clone --depth 1 https://github.com/mantinedev/mantine.git /tmp
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
