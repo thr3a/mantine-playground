@@ -14,3 +14,7 @@ export type Props = {
   styles: string[];
   children?: React.ReactNode;
 }
+
+export type ListProps = {
+  [key: string]: Props[];
+}

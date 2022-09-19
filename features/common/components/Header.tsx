@@ -1,7 +1,7 @@
 export const Header = () => {
   return (
     <>
-      <h1>Mantine Grid PlayGround</h1>
+      <h1>Mantine Components Gallery</h1>
     </>
   );
 };

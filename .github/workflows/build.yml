@@ -10,6 +10,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Checkout official repository
+        uses: actions/checkout@v3
+        with:
+          repository: https://github.com/mantinedev/mantine.git
+          path: /tmp
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
@@ -18,6 +24,12 @@ jobs:
 
       - name: Install NPM packages
         run: npm ci
+
+      - name: Generate document and code
+        run: node --loader ts-node/esm scripts/generateDataAndCode.ts
+
+      - name: fix table code
+        run: cat scripts/tableFix.js data/code/Table.tsx > /tmp/a && cat /tmp/a > data/code/Table.tsx
 
       - name: Build Next.js app
         run: npm run build
