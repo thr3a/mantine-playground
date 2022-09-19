@@ -24,6 +24,7 @@ import {pascalCase, paramCase} from "change-case";
     'Dropzone', // D&D 取得がバグる
     'Getting started', // 不要
     'Calendar', // 表示は出来るがnpm run buildでバグる
+    'Rich text editor', //document is not defined quillでエラーになる？
   ];
 
   for (const filepath of files) {
