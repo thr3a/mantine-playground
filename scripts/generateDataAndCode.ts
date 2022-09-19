@@ -25,6 +25,7 @@ import {pascalCase, paramCase} from "change-case";
     'Getting started', // 不要
     'Calendar', // 表示は出来るがnpm run buildでバグる
     'Rich text editor', //document is not defined quillでエラーになる？
+    'Transition', // github CIでエラー
   ];
 
   for (const filepath of files) {
