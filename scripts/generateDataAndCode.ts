@@ -23,6 +23,7 @@ import {pascalCase, paramCase} from "change-case";
     'Modals manager', // モーダル上位版 ページ表示がバグる
     'Dropzone', // D&D 取得がバグる
     'Getting started', // 不要
+    'Calendar', // 表示は出来るがnpm run buildでバグる
   ];
 
   for (const filepath of files) {
