@@ -2,9 +2,9 @@ import { Title, Group, Text, Space, Grid } from '@mantine/core';
 import { Props } from '../Props';
 import { IconExternalLink } from '@tabler/icons';
 import { NextLink } from '@mantine/next';
+import * as mandemo from '../../../src/mantine-demos/src/index';
 
-
-export const DemoContainer = ({title, description, children, slug}: Props) => {
+export const DemoContainer = ({title, description, slug, demoType}: Props) => {
   const url = `https://mantine.dev${slug}`;
   return (
     <>
@@ -26,9 +26,10 @@ export const DemoContainer = ({title, description, children, slug}: Props) => {
       </Text>
       <Space h="sm" />
       <Grid>
-        <Grid.Col span={7}>{children}</Grid.Col>
+        <Grid.Col span={7}>
+          <mandemo.Demo data={mandemo[`${title}Demos`][demoType]} />
+        </Grid.Col>
       </Grid>
-      <Space h="lg" />
     </>
   );
 };

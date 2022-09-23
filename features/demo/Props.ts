@@ -12,7 +12,7 @@ export type Props = {
   source: string;
   docs: string;
   styles: string[];
-  children?: React.ReactNode;
+  demoType: string;
 }
 
 export type ListProps = {

@@ -10,6 +10,8 @@ import { Title, Group, Text, Space, Grid } from '@mantine/core';
 type RootProps = {
   componentList: ListProps;
 }
+
+// NOTE: find ./data/json -name '*.json' | xargs jq -r .category | sort | uniq
 const Home: NextPage<RootProps> = ({componentList}) => {
   return (
     <>
@@ -17,61 +19,19 @@ const Home: NextPage<RootProps> = ({componentList}) => {
         <Text component={NextLink} href='https://mantine.dev/' target='_blank' variant="link">
         Mantine UI
         </Text>
-        のReactコンポーネント間一覧
+        のReactコンポーネント一覧
       </p>
-      <DemoContainerGroup
-        group='mantine-core'
-        subgroup='inputs'
-        items={componentList['mantine-core_inputs']}
-      ></DemoContainerGroup>
-      <DemoContainerGroup
-        group='mantine-core'
-        subgroup='layout'
-        items={componentList['mantine-core_layout']}
-      ></DemoContainerGroup>
-      <DemoContainerGroup
-        group='mantine-core'
-        subgroup='buttons'
-        items={componentList['mantine-core_buttons']}
-      ></DemoContainerGroup>
-      <DemoContainerGroup
-        group='mantine-core'
-        subgroup='data-display'
-        items={componentList['mantine-core_data-display']}
-      ></DemoContainerGroup>
-      <DemoContainerGroup
-        group='mantine-core'
-        subgroup='feedback'
-        items={componentList['mantine-core_feedback']}
-      ></DemoContainerGroup>
-      <DemoContainerGroup
-        group='mantine-core'
-        subgroup='navigation'
-        items={componentList['mantine-core_navigation']}
-      ></DemoContainerGroup>
-      <DemoContainerGroup
-        group='mantine-core'
-        subgroup='misc'
-        items={componentList['mantine-core_misc']}
-      ></DemoContainerGroup>
-      <DemoContainerGroup
-        group='mantine-core'
-        subgroup='overlay'
-        items={componentList['mantine-core_overlay']}
-      ></DemoContainerGroup>
-      <DemoContainerGroup
-        group='mantine-core'
-        subgroup='typography'
-        items={componentList['mantine-core_typography']}
-      ></DemoContainerGroup>
-      <DemoContainerGroup
-        group='mantine-dates'
-        items={componentList['mantine-dates_']}
-      ></DemoContainerGroup>
-      <DemoContainerGroup
-        group='other-packages'
-        items={componentList['other-packages_']}
-      ></DemoContainerGroup>
+      { ['typography', 'buttons', 'inputs', 'feedback', 'data-display', 'layout', 'navigation', 'overlay', 'misc'].map( (name, index) => {
+        const items = componentList[`mantine-core_${name}`];
+        return(
+          <DemoContainerGroup
+            group='mantine-core'
+            subgroup={name}
+            items={items}
+            key={index}
+          ></DemoContainerGroup>
+        );
+      })}
     </>
   );
 };
