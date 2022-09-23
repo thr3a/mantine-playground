@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  basePath: process.env.GITHUB_ACTIONS && '/mantine-playground',
+  basePath: process.env.GITHUB_ACTIONS && '/mantine-cheatsheets',
   trailingSlash: true,
 };
 
