@@ -26,8 +26,13 @@ export const DemoContainer = ({title, description, slug, demoType}: Props) => {
       </Text>
       <Space h="sm" />
       <Grid>
-        <Grid.Col span={7}>
-          <mandemo.Demo data={mandemo[`${title}Demos`][demoType]} />
+        <Grid.Col span={8}>
+          { title === 'Transition' &&
+            <mandemo.Demo data={mandemo.TooltipDemos.transitions} />
+          }
+          { title !== 'Transition' &&
+            <mandemo.Demo data={mandemo[`${title}Demos`][demoType]} />
+          }
         </Grid.Col>
       </Grid>
     </>

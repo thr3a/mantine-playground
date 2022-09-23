@@ -32,6 +32,10 @@ const Home: NextPage<RootProps> = ({componentList}) => {
           ></DemoContainerGroup>
         );
       })}
+      <DemoContainerGroup
+        group='mantine-other'
+        items={componentList['other-packages_']}
+      ></DemoContainerGroup>
     </>
   );
 };

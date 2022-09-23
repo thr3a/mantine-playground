@@ -7,22 +7,19 @@ import {pascalCase, paramCase} from "change-case";
 (async () => {
   const files = glob.sync([
     '/tmp/mantine/docs/src/docs/core/*.mdx',
-    // '/tmp/mantine/docs/src/docs/dates/*.mdx',
-    // '/tmp/mantine/docs/src/docs/others/*.mdx',
+    '/tmp/mantine/docs/src/docs/others/*.mdx',
   ]);
 
   const blacklist = [
-    'Affix', // scroll to topボタン ページ表示がバグる
-    'TypographyStylesProvider', // ページ表示がバグる
-    'AppShell', // header and navbar ページ表示がバグる
-    'Portal', // 取得不可
+    'Affix', // scroll to topボタン 不要
+    'TypographyStylesProvider', // 不要
+    'AppShell', // 不要
+    'Portal', // 不要
     'Modals manager', // モーダル上位版 ページ表示がバグる
-    // 'Dropzone', // D&D 取得がバグる
-    'Getting started', // 不要
-    'Calendar', // 表示は出来るがnpm run buildでバグる
-    'Rich text editor', //document is not defined quillでエラーになる？
-    'Transition', // github CIでエラー
-    'TransferList', // ビルドまでは出来るが表示バグる
+    'Rich text editor', //document is not defined quillでエラーになる
+    'TransferList', // ビルドまでは出来るが表示バグる 要検証
+    'Notifications system', // 不要
+    'Prism code highlight', // 不要
   ];
 
   for (const filepath of files) {
@@ -31,6 +28,10 @@ import {pascalCase, paramCase} from "change-case";
     const data = matter(fileBody).data as Props;
     if (blacklist.includes(data.title)) {
       continue;
+    }
+    // 命名規則が違うパターン
+    if (data.title === 'Navigation progress') {
+      data.title = 'NProgress';
     }
 
     if (fileBody.includes('.configurator} />')) {

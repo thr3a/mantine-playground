@@ -5,6 +5,11 @@ find -name '*.story.tsx' -delete
 cp -f /tmp/mantine/configuration/types/*.d.ts ./src
 cp -f /tmp/mantine/src/mantine-styles/src/emotion.d.ts ./src
 
+sed -i '/AffixDemos/s/^/\/\//g' src/mantine-demos/src/index.ts
+sed -i '/TypographyStylesProviderDemos/s/^/\/\//g' src/mantine-demos/src/index.ts
+sed -i '/AppShellDemos/s/^/\/\//g' src/mantine-demos/src/index.ts
 sed -i '/RichTextEditorDemos/s/^/\/\//g' src/mantine-demos/src/index.ts
-sed -i '/Affix/s/^/\/\//g' src/mantine-demos/src/index.ts
-sed -i '/TypographyStylesProvider/s/^/\/\//g' src/mantine-demos/src/index.ts
+sed -i '/Portal/s/^/\/\//g' src/mantine-demos/src/index.ts
+sed -i '/ModalsDemos/s/^/\/\//g' src/mantine-demos/src/index.ts
+sed -i '/NotificationsDemos/s/^/\/\//g' src/mantine-demos/src/index.ts
+sed -i '/PrismDemos/s/^/\/\//g' src/mantine-demos/src/index.ts
