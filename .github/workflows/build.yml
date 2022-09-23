@@ -25,10 +25,7 @@ jobs:
         run: npm ci
 
       - name: Generate document and code
-        run: node --loader ts-node/esm scripts/generateDataAndCode.ts
-
-      - name: fix table code
-        run: cat scripts/tableFix.js data/code/Table.tsx > /tmp/a && cat /tmp/a > data/code/Table.tsx
+        run: node --loader ts-node/esm scripts/generateData.ts
 
       - name: Build Next.js app
         run: npm run build
