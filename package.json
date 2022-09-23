@@ -42,7 +42,7 @@
     "react-beautiful-dnd": "^13.1.1",
     "react-dom": "18.2.0",
     "react-input-mask": "^2.0.4",
-    "sass": "^1.54.9",
+    "sass": "^1.55.0",
     "ts-node": "^10.9.1",
     "zod": "^3.19.1"
   },
