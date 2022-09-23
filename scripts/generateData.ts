@@ -15,9 +15,9 @@ import {pascalCase, paramCase} from "change-case";
     'TypographyStylesProvider', // 不要
     'AppShell', // 不要
     'Portal', // 不要
-    'Modals manager', // モーダル上位版 ページ表示がバグる
+    'Modals manager', // 不要
     'Rich text editor', //document is not defined quillでエラーになる
-    'TransferList', // ビルドまでは出来るが表示バグる 要検証
+    'TransferList', // ビルドまでは出来るが表示バグる 直せない。。
     'Notifications system', // 不要
     'Prism code highlight', // 不要
   ];

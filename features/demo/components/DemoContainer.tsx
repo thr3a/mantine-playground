@@ -28,10 +28,10 @@ export const DemoContainer = ({title, description, slug, demoType}: Props) => {
       <Grid>
         <Grid.Col span={8}>
           { title === 'Transition' &&
-            <mandemo.Demo data={mandemo.TooltipDemos.transitions} />
+            <mandemo.Demo data={mandemo.TooltipDemos.transitions} configuratorProps={{ includeCode: false }} />
           }
           { title !== 'Transition' &&
-            <mandemo.Demo data={mandemo[`${title}Demos`][demoType]} />
+            <mandemo.Demo data={mandemo[`${title}Demos`][demoType]} demoProps={{ code: null }} configuratorProps={{ includeCode: false }} />
           }
         </Grid.Col>
       </Grid>
