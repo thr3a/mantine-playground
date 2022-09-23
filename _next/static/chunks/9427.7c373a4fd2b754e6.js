@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[9427],{9427:function(n,u,e){e.r(u),e.d(u,{default:function(){return i}});var r=e(5893),c=e(6720),t=e(3991);function i(){return(0,r.jsx)(c.I,{icon:(0,r.jsx)(t.ZiH,{}),placeholder:"Your email"})}}}]);

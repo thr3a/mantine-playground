@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[4618],{4618:function(n,e,r){r.r(e),r.d(e,{default:function(){return u}});var c=r(5893),i=r(5117),t=r(8818);function u(){return(0,c.jsxs)(c.Fragment,{children:[(0,c.jsx)(i.x,{children:"First line"}),(0,c.jsx)(t.T,{h:"md"}),(0,c.jsx)(i.x,{children:"Second line"})]})}}}]);

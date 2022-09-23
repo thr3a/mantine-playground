@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[6640],{6640:function(n,t,u){u.r(t),u.d(t,{default:function(){return r}});var e=u(5893),i=u(4147);function r(){return(0,e.jsx)(i.MG,{label:"What time is it now?"})}}}]);

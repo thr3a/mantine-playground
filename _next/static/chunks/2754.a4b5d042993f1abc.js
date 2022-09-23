@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[2754],{2754:function(n,t,u){u.r(t),u.d(t,{default:function(){return o}});var e=u(5893),r=u(8574);function o(){return(0,e.jsx)(r.p,{language:"tsx",children:"import { Button } from '@mantine/core';\n\n\nexport default function PrismCodeHighlightDemo() {\n  return <Button>Hello</Button>\n}"})}}}]);
