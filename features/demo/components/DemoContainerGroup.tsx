@@ -1,4 +1,4 @@
-import { Title, Divider, Grid } from '@mantine/core';
+import { Divider } from '@mantine/core';
 import { Props } from '../Props';
 import { DemoContainer } from './DemoContainer';
 
