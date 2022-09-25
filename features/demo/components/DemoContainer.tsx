@@ -26,7 +26,7 @@ export const DemoContainer = ({title, description, slug, demoType}: Props) => {
       </Text>
       <Space h="sm" />
       <Grid>
-        <Grid.Col span={8}>
+        <Grid.Col md={8}>
           { title === 'Transition' &&
             <mandemo.Demo data={mandemo.TooltipDemos.transitions} configuratorProps={{ includeCode: false }} />
           }
