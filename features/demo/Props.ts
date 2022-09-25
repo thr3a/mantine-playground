@@ -15,6 +15,6 @@ export type Props = {
   demoType: string;
 }
 
-export type ListProps = {
-  [key: string]: Props[];
-}
+// export type ListProps = {
+//   [key: string]: Props[];
+// }

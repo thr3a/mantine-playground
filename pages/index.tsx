@@ -1,15 +1,13 @@
 import type { NextPage } from 'next';
 import { readFileSync } from 'fs';
-import { GetStaticProps } from 'next';
 import glob from "fast-glob";
 import { DemoContainerGroup } from '../features/demo/components/DemoContainerGroup';
-import { Props, ListProps } from '../features/demo/Props';
+import { Props } from '../features/demo/Props';
 import { NextLink } from '@mantine/next';
-import { Title, Group, Text, Space, Grid } from '@mantine/core';
+import { Text } from '@mantine/core';
+import type { InferGetStaticPropsType, GetStaticPropsContext } from 'next';
 
-type RootProps = {
-  componentList: ListProps;
-}
+type RootProps = InferGetStaticPropsType<typeof getStaticProps>;
 
 // NOTE: find ./data/json -name '*.json' | xargs jq -r .category | sort | uniq
 const Home: NextPage<RootProps> = ({componentList}) => {
@@ -46,7 +44,7 @@ const groupBy = <T, K extends keyof any>(arr: T[], key: (i: T) => K) =>
     return groups;
   }, {} as Record<K, T[]>);
 
-export const getStaticProps: GetStaticProps<RootProps> = (context) => {
+export const getStaticProps = async (context: GetStaticPropsContext) => {
   const files = glob.sync('data/json/*.json');
   const list: Props[] = [];
   for (const filepath of files) {
