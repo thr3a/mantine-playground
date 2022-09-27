@@ -4,7 +4,30 @@ on:
   push:
 
 jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Upgrade mantine packages
+        run: |
+          npm run update-package
+          npm install
+
+      - name: Commit updated files
+        run: |
+          git config core.filemode false
+          if ! git diff --exit-code --quiet
+          then
+            git add -A
+            git config user.name thr3a
+            git config user.email thr3a@example.com
+            git commit -m "update: update package"
+            git push
+          fi
   build:
+    needs: update
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
