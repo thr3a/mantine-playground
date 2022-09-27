@@ -2,6 +2,8 @@ name: Build Next.js app
 
 on:
   push:
+  schedule:
+    - cron:  '57 22 * * *'
 
 jobs:
   update:
@@ -9,6 +11,15 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: npm
+
+      - name: Install NPM packages
+        run: npm ci
 
       - name: Upgrade mantine packages
         run: |
