@@ -3,6 +3,7 @@ import { Props } from '../Props';
 import { IconExternalLink } from '@tabler/icons';
 import { NextLink } from '@mantine/next';
 import * as mandemo from '../../../src/mantine-demos/src/index';
+import { Demo } from '@mantine/ds';
 
 export const DemoContainer = ({title, description, slug, demoType}: Props) => {
   const url = `https://mantine.dev${slug}`;
@@ -28,10 +29,10 @@ export const DemoContainer = ({title, description, slug, demoType}: Props) => {
       <Grid>
         <Grid.Col md={8}>
           { title === 'Transition' &&
-            <mandemo.Demo data={mandemo.TooltipDemos.transitions} configuratorProps={{ includeCode: false }} />
+            <Demo data={mandemo.TooltipDemos.transitions} configuratorProps={{ includeCode: false }} />
           }
           { title !== 'Transition' &&
-            <mandemo.Demo data={mandemo[`${title}Demos`][demoType]} demoProps={{ code: null }} configuratorProps={{ includeCode: false }} />
+            <Demo data={mandemo[`${title}Demos`][demoType]} demoProps={{ code: null }} configuratorProps={{ includeCode: false }} />
           }
         </Grid.Col>
       </Grid>
