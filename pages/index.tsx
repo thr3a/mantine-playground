@@ -15,7 +15,7 @@ const Home: NextPage<RootProps> = ({componentList}) => {
     <>
       <p>
         <Text component={NextLink} href='https://mantine.dev/' target='_blank' variant="link">
-        Mantine UI
+        Mantine
         </Text>
         のReactコンポーネント一覧
       </p>
