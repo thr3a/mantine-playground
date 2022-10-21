@@ -38,4 +38,4 @@ next-env.d.ts
 /data
 !/data/code/.keep
 !/data/json/.keep
-/src/mantine-demos
+/src
